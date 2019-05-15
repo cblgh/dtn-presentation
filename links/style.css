@@ -1,0 +1,41 @@
+html {
+    font-family: 'Anonymous Pro', monospace;
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+    --bg-primary: #313131;
+    --text-primary: #f2f2f2;
+    --text-secondary: #ccc;
+    --text-highlight: #ffe4b5;
+}
+
+.remark-code, .remark-inline-code { font-family: 'Anonymous Pro'; }
+
+.remark-container, .remark-slide-content {
+    background: #111 !important;
+    color: #f2f2f2 !important;
+}
+
+.remark-slide-scaler {
+    box-shadow: none !important;
+}
+
+.rm-section-marker {
+    bottom: 12px;
+    opacity: .5;
+    position: absolute;
+    left: 80px;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+
+img {
+    width: 70vmin;
+    height: 70vmin;
+    object-fit: contain;
+    text-align: center;
+}
