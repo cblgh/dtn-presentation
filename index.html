@@ -11,6 +11,7 @@
     <textarea id="source">
     .rm-section-marker[Welcome]
     # Welcome to the Cabal Club
+
     ???
     Hi, and thanks for coming!
     
@@ -155,6 +156,22 @@
     
     --
     ### The Log
+    <div class="grid side-image">
+        <img src="media/cabal-dtn-single-log.png"></img>
+    </div>
+
+    ---
+    count: false
+    .rm-section-marker[Architecture]
+
+    # Peers
+    ### Keypairs
+    ### The Log
+
+
+    <div class="grid side-image">
+        <img src="media/cabal-dtn-append-only.png"></img>
+    </div>
 
     ???
     An important point is that we only ever _append_ to this log. We never delete from it, or insert entries at earlier
@@ -162,16 +179,37 @@
     distributed systems which generally make life a thousand times easier, but going deep on those properties is a bit
     out of the scope for this session. This append-only log is eventually shared with other peers. 
 
-    --
+    ---
+    count: false
+    .rm-section-marker[Architecture]
+
+    # Peers
+    ### Keypairs
+    ### The Log
     ### Connectivity
+
+    <div class="grid side-image">
+        <img src="media/cabal-dtn-connectivity.png"></img>
+    </div>
+
 
     ???
     To share logs between themselves, peers connect to each other over a kind of rendezvous, by which i mean a piece of
     information that ties the disparate peers together into a cohesive whole. This rendezvous is the cabal key. The cabal
     key is basically a 64 character long string. (a string representation of an ed25519 public key)
 
-    --
+    ---
+    count: false
+    .rm-section-marker[Architecture]
+
+    # Peers
+    ### Keypairs
+    ### The Log
+    ### Connectivity
     ### Views
+    <div class="grid side-image">
+        <img src="media/cabal-dtn-ordered-view.png"></img>
+    </div>
 
     ???
     So now we have a bunch of logs, one from each peer. Each log is then combined into a cohesive view, like individual
@@ -188,6 +226,7 @@
     just as well as any of the other clients, and without needing to rewrite any core parts of the library.
 
     ---
+    class: middle center
     .rm-section-marker[Architecture]
 
     # Kappa Architecture
@@ -243,6 +282,7 @@
     * And peers connect to each other over a cabal key in a mesh-like fashion. 
 
     ---
+    class: middle center
     .rm-section-marker[Clients]
 
     # Clients
@@ -320,6 +360,8 @@
     .rm-section-marker[Future]
 
     # In the Pipeline
+    --
+
     * at-rest encryption & blind peers
     --
 

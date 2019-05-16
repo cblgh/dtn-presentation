@@ -73,6 +73,16 @@ h1, h2, h3 {
     max-width: 40vmin !important
 }
 
+.side-image {
+    position: absolute;
+    top: 8em;
+    right: 16em;
+}
+
+.side-image > img {
+    max-height: 40vmin !important;
+}
+
 img {
     max-height: 70vmin;
     max-width: 70vmin;
