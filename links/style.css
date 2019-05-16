@@ -28,14 +28,54 @@ html {
     left: 80px;
 }
 
+.remark-notes-current-area {
+    height: 100% !important;
+}
+
+.remark-notes-preview-area {
+    display: none !important;
+}
+
+.contrib-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.presentation-logo {
+    position: absolute;
+    right: 80px;
+    background: url("../cabal-logo.png");
+    height: 80px;
+    width: 80px;
+}
+
+.highlight {
+    color: var(--text-highlight);
+}
+
 h1, h2, h3 {
     font-weight: normal;
 }
 
+.align-self-center {
+    align-self: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid > img {
+    justify-self: center;
+}
+
+.max-width-40 {
+    max-width: 40vmin !important
+}
 
 img {
-    width: 70vmin;
-    height: 70vmin;
+    max-height: 70vmin;
+    max-width: 70vmin;
     object-fit: contain;
     text-align: center;
 }
