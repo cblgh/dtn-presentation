@@ -51,6 +51,8 @@
 
     Cabal is a local-first, peer-to-peer community platform. (and currently used as an engine of distributed chat clients)
 
+    It's like IRC with backlog, or free, offline Slack
+
     What this means is,
     * cabal works without servers
         * anyone can start a chat room (or, cabal) and any number of cabals, thanks to a practically infinite namespace
@@ -96,7 +98,7 @@
     arrangement just felt so fragile; one change to the terms of service and all of those communities would be scattered to the
     wind.
 
-    I had also seen Karissa McKelvey and substack work on a really cool project called chatmesh, which was basically
+    Around this time I had seen Karissa McKelvey and substack work on a really cool project called chatmesh, which was basically
     cabal but without any channels. On top of *that* Jim Pick had just released an inspiring proof of concept for dat
     where he demonstrated this shopping list that allowed many devices to add and remove items to and from the shopping
     list. And it was running in a web browser via glitch! 
@@ -108,7 +110,7 @@
     
     Around this time Noffle was also working on something called kappa-chat, and soon they also joined the project.
 
-    Nikolaiwarner joined the fray as well and become a core contributor, and we were constantly getting lots of really
+    Nikolaiwarner joined the fray as well and became a core contributor, and we were constantly getting lots of really
     nice drive-by pull requests adding features to clients. 
 
     NOW
@@ -116,7 +118,7 @@
     * Tony Ivanov (or Telamon) that's been pushing out amazing updates to the really hard and technical parts of Cabal
     * Nikolai Warner, who's been creating entirely new clients
     * Noffle, who has been fixing tricky replication bugs
-    * and myself, I kind of dabble in all of the things at once hehe
+    * and myself, I kind of dabble in all of the above at once hehe
     
     --
     ## first steps
@@ -152,13 +154,16 @@
 
     ???
     Each peer is represented by a keypair (one key is the public key, and the other key is the so called private key). 
-    A peer writes messages to a log using their private key, and only that peer can write messages to their log. 
     
     --
     ### The Log
     <div class="grid side-image">
         <img src="media/cabal-dtn-single-log.png"></img>
     </div>
+
+    ???
+    
+    A peer writes messages to a log using their private key, and only that peer can write messages to their log. 
 
     ---
     count: false
@@ -196,7 +201,8 @@
     ???
     To share logs between themselves, peers connect to each other over a kind of rendezvous, by which i mean a piece of
     information that ties the disparate peers together into a cohesive whole. This rendezvous is the cabal key. The cabal
-    key is basically a 64 character long string. (a string representation of an ed25519 public key)
+    key is basically a 64 character long string. (a string representation of an ed25519 public key; since the key is only
+    ever used to generate the namespace, or cabal key, we throw away the private key.)
 
     ---
     count: false
@@ -339,6 +345,11 @@
     .rm-section-marker[Clients]
     # Community Projects
 
+    ???
+
+    As can be seen by the clients, we've been blessed by wonderful contributors. A few more of those projects are
+    --
+
     * cabal-ses-bot by **Jim Pick**
     --
 
@@ -363,42 +374,43 @@
     --
 
     * at-rest encryption & blind peers
-    --
 
+    ???
+    * the idea behind a blind peer is basically allowing anyone to help host your cabal, but without being able to
+    see any of the history or who is in a cabal. it will be really cool once we get into place
+    --
     * `cabal-client`: a minimal library for building your own client
-    --
 
+    --
     * moderation
-    --
 
+    ???
+
+    * in addition to working on cabal and working 60%, i'm currrently doing my master's
+      thesis on the topic of moderation in decentralised chat systems. or more formally
+    _"How to hide peers exhibiting malicious behaviour in a distributed chat context"_
+    * the aim is to produce a nodejs module that can be used by any decentralised chat system (whether cabal or
+      scuttlebutt) to implement a trust layer untop of the system's replication layer.
+
+    --
     * DNS shortnames e.g.
         * cabal://cabal.chat
         * cabal://cblgh.org
     --
     * private channels
-
-    ???
-    * at-rest encryption & blind peers
-        * the idea behind a blind peer is basically allowing anyone to help host your cabal, but without being able to
-        see any of the history or who is in a cabal. it will be really cool once we get into place
-    * cabal-client: a minimal library for building your own client
-    * moderation
-        * in addition to working on cabal and holding down a frontend job at a startup, i'm also doing my master's
-          thesis on the topic of moderation in decentralised chat systems. or   
-        _"How to hide peers exhibiting malicious behaviour in a distributed chat context"_
-        * my aim with the thesis is to produce a nodejs module that can be used by any decentralised chat system
-        (whether cabal or secure scuttlebutt) to implement a trust layer ontop of the system's replication layer. i'm
-        aiming at having a irst version of it implemented in Cabal by October.
-    * DNS shortnames
-        * cabal://cabal.chat
-        * cabal://cblgh.org
-    * private channels
-
     ---
     class: middle center
     .rm-section-marker[Future]
 
     # Funding
+
+    ???
+    All of the stuff I've talked about for the past few minutes has been accomplished without any kind of funding. 
+
+    Now imagine what we could do if someone was working on cabal as a paid position, and able to dedicate work hours towards
+    enriching the commons. I think we could push the discusson in and around our peer to peer movement foward.
+
+    If you have any leads on non-venture capital funding, whether that's direct funding or help and tips on writing grants - please come talk to me as I'd love to chat :)
 
     ---
     .rm-section-marker[Future]
@@ -410,13 +422,9 @@
     ???
     I also want to thank everyone who's joined the cabal club by contributing to the clients or the core. 
     
-    It's been so cool when someone comes by, says hi and then say something like "oh and btw, here's a pull request to add *really cool and
+    It's been so cool when someone comes by, says hi and then go say something like "oh and btw, here's a pull request to add *really cool and
     unexpected feature*". It floors me like literally every time. 
 
-
-    Alright, I think that's all from me. If you want to get in touch with me, you can use that email there.
-
-    Thanks.
 
     ---
     class: middle center
@@ -425,7 +433,12 @@
 
     ### http://cabal.chat
     ### cblgh@cblgh.org
+    
+    ???
 
+    Alright, I think that's all from me. If you want to get in touch with me, you can use that email there.
+
+    Thanks.
 
     </textarea>
     <script src="remark-latest.min.js"></script>

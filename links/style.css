@@ -1,6 +1,7 @@
 html {
     font-family: 'Anonymous Pro', monospace;
     font-family: 'Lato', sans-serif;
+    line-height: 1.5;
 }
 
 :root {
@@ -55,6 +56,7 @@ html {
 
 h1, h2, h3 {
     font-weight: normal;
+    margin: 1.5rem;
 }
 
 .align-self-center {
