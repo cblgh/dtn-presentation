@@ -83,6 +83,11 @@ h1, h2, h3 {
     max-height: 40vmin !important;
 }
 
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
 img {
     max-height: 70vmin;
     max-width: 70vmin;
